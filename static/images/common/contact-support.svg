@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="560" viewBox="0 0 900 560" role="img" aria-labelledby="contactTitle">
+  <title id="contactTitle">Contact support illustration</title>
+  <rect width="900" height="560" fill="#f0f5ff"/>
+  <rect x="90" y="120" width="720" height="320" rx="28" fill="#d9e7ff"/>
+  <rect x="180" y="180" width="300" height="200" rx="24" fill="#ffffff"/>
+  <circle cx="610" cy="230" r="58" fill="#cf5c36"/>
+  <rect x="540" y="315" width="150" height="22" rx="11" fill="#264653"/>
+  <rect x="540" y="350" width="180" height="22" rx="11" fill="#264653"/>
+</svg>

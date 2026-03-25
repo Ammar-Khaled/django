@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Products{% endblock %}
+
+{% block content %}
+<section class="hero">
+    <div>
+        <p class="eyebrow">Latest Collection</p>
+        <h1>Find your next favorite gadget.</h1>
+        <p class="hero-copy">Browse products with clear pricing, stock insight, and full details one click away.</p>
+    </div>
+    <img src="{% static 'images/common/hero-shopping.svg' %}" alt="Shopping illustration">
+</section>
+
+<section class="cards-grid">
+    {% for product in products %}
+    <article class="product-card">
+        <img src="{% static product.image %}" alt="{{ product.name }}">
+        <h2>{{ product.name|title }}</h2>
+        <p class="price">${{ product.price }}</p>
+        <a class="btn" href="{% url 'products:detail' product.id %}">Show</a>
+    </article>
+    {% endfor %}
+</section>
+{% endblock %}

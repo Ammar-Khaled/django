@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}About | Marketplace{% endblock %}
+
+{% block content %}
+<section class="two-col">
+    <div>
+        <p class="eyebrow">About Us</p>
+        <h1>We build a better product discovery experience.</h1>
+        <p>Our marketplace focuses on clear product information, smooth browsing, and design that feels modern on all screens.</p>
+        <p>Everything here uses Django templates, static files, and reusable layout inheritance.</p>
+    </div>
+    <img src="{% static 'images/common/about-team.svg' %}" alt="Team illustration">
+</section>
+{% endblock %}

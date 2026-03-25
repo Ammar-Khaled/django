@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="560" viewBox="0 0 900 560" role="img" aria-labelledby="aboutTitle">
+  <title id="aboutTitle">About team illustration</title>
+  <rect width="900" height="560" fill="#eef7f1"/>
+  <rect x="110" y="120" width="680" height="320" rx="30" fill="#d5ead8"/>
+  <circle cx="270" cy="260" r="70" fill="#5f6f52"/>
+  <circle cx="450" cy="240" r="70" fill="#cf5c36"/>
+  <circle cx="620" cy="260" r="70" fill="#264653"/>
+  <rect x="200" y="350" width="500" height="40" rx="20" fill="#ffffff"/>
+</svg>

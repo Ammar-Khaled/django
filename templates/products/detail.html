@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Product Details | Marketplace{% endblock %}
+
+{% block content %}
+{% if product %}
+<section class="detail-layout">
+    <img class="detail-image" src="{% static product.image %}" alt="{{ product.name }}">
+    <div class="detail-content">
+        <p class="eyebrow">Product #{{ product.id }}</p>
+        <h1>{{ product.name|title }}</h1>
+        <p class="price">${{ product.price }}</p>
+        <p><strong>Stock:</strong> {{ product.stock }}</p>
+        <p><strong>Description:</strong> {{ product.description }}</p>
+        <a class="btn btn-secondary" href="{% url 'products:index' %}">Back to products</a>
+    </div>
+</section>
+{% else %}
+<section class="empty-state">
+    <h1>Product not found</h1>
+    <p>The requested product does not exist in the dummy data.</p>
+    <a class="btn" href="{% url 'products:index' %}">Return to products</a>
+</section>
+{% endif %}
+{% endblock %}

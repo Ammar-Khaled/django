@@ -1,0 +1,35 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Marketplace{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'css/site.css' %}">
+</head>
+<body>
+    <div class="page-wrap">
+        <header class="site-header">
+            <div class="container header-inner">
+                <a class="brand" href="{% url 'products:index' %}">Zagzig Market</a>
+                <nav class="nav-links">
+                    <a href="{% url 'products:index' %}">Products</a>
+                    <a href="{% url 'about:index' %}">About</a>
+                    <a href="{% url 'contact:index' %}">Contact</a>
+                </nav>
+            </div>
+        </header>
+
+        <main class="container content-area">
+            {% block content %}{% endblock %}
+        </main>
+
+        <footer class="site-footer">
+            <div class="container footer-inner">
+                <p>Built with Django.</p>
+                <p>Zagzig Marketplace.</p>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>

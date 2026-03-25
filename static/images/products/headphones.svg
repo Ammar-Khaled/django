@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="420" viewBox="0 0 640 420" role="img" aria-labelledby="headphonesTitle">
+  <title id="headphonesTitle">Wireless headphones</title>
+  <rect width="640" height="420" fill="#fff9ee"/>
+  <path d="M190 220 A130 130 0 0 1 450 220" fill="none" stroke="#333" stroke-width="28"/>
+  <rect x="120" y="220" width="90" height="130" rx="24" fill="#cf5c36"/>
+  <rect x="430" y="220" width="90" height="130" rx="24" fill="#cf5c36"/>
+</svg>
