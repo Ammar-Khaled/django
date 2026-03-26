@@ -191,6 +191,91 @@ h1 {
     padding: 2rem;
 }
 
+/* Form Styles */
+.form-container {
+    max-width: 600px;
+    margin: 2rem auto;
+    text-align: left;
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 18px;
+    padding: 2rem;
+    box-shadow: 0 10px 35px rgba(87, 70, 48, 0.1);
+}
+
+.form-heading {
+    text-align: center;
+    margin-bottom: 0.35rem;
+}
+
+.form-title {
+    text-align: center;
+    margin: 0 0 2rem;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: var(--ink-soft);
+}
+
+.form-control {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    font-size: 1rem;
+    font-family: inherit;
+    color: var(--ink);
+    background-color: #fff;
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.file-input {
+    padding: 0.45rem 0.5rem;
+    background: transparent;
+}
+
+.file-input::file-selector-button {
+    border: 0;
+    border-radius: 8px;
+    background: var(--accent);
+    color: #fff;
+    padding: 0.45rem 0.8rem;
+    font-weight: 700;
+    cursor: pointer;
+    margin-right: 0.7rem;
+    transition: background-color 0.2s ease;
+}
+
+.file-input::file-selector-button:hover {
+    background: var(--accent-dark);
+}
+
+.form-control:focus {
+    outline: none;
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px rgba(207, 92, 54, 0.2);
+}
+
+textarea.form-control {
+    min-height: 120px;
+    resize: vertical;
+}
+
+.form-actions {
+    display: flex;
+    gap: 1rem;
+    margin-top: 2rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
 @media (max-width: 768px) {
     .hero,
     .two-col,
@@ -201,5 +286,10 @@ h1 {
     .header-inner,
     .footer-inner {
         flex-direction: column;
+    }
+
+    .form-actions .btn {
+        width: 100%;
+        text-align: center;
     }
 }

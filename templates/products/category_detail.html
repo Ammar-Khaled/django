@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}{{ category.name|title }}{% endblock %}
+
+{% block content %}
+<section class="hero">
+    <div>
+        <p class="eyebrow">Category</p>
+        <h1>{{ category.name|title }}</h1>
+        <p class="hero-copy">Browse all products available in {{ category.name|title }}.</p>
+    </div>
+    {% if category.logo %}
+    <img src="{{ category.logo_url }}" alt="{{ category.name }} illustration"
+        style="max-height: 200px; object-fit: contain;">
+    {% endif %}
+</section>
+
+<section class="cards-grid">
+    {% for product in category.products.all %}
+    <article class="product-card">
+        {% if product.image %}
+        <img src="{{ product.image_url }}" alt="{{ product.name }}">
+        {% endif %}
+        <h2>{{ product.name|title }}</h2>
+        <p class="price">${{ product.price }}</p>
+        <a class="btn" href="{% url 'products:detail' product.id %}">Show</a>
+    </article>
+    {% empty %}
+    <p>No products found in this category.</p>
+    {% endfor %}
+</section>
+{% endblock %}

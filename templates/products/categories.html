@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Categories{% endblock %}
+
+{% block content %}
+<section class="hero">
+    <div>
+        <p class="eyebrow">Explore Categories</p>
+        <h1>Find items by category.</h1>
+        <p class="hero-copy">Browse our collection of categories to find exactly what you need.</p>
+    </div>
+</section>
+
+<section class="cards-grid">
+    {% for category in categories %}
+    <article class="product-card">
+        {% if category.logo %}
+        <img src="{{ category.logo_url }}" alt="{{ category.name }}">
+        {% endif %}
+        <h2>{{ category.name|title }}</h2>
+        <a class="btn" href="{% url 'products:category_detail' category.id %}">View Products</a>
+    </article>
+    {% endfor %}
+</section>
+{% endblock %}

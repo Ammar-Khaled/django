@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+
+{% block title %}Create Product | Marketplace{% endblock %}
+
+{% block content %}
+<section class="form-container">
+    <p class="eyebrow form-heading">Add Product</p>
+    <h1 class="form-title">Create a new product</h1>
+
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" class="form-control" placeholder="e.g. Vintage Leather Jacket"
+                required>
+        </div>
+        <div class="form-group">
+            <label for="category">Category</label>
+            <select id="category" name="category" class="form-control" required>
+                <option value="" selected disabled>Select a category</option>
+                {% for category in categories %}
+                <option value="{{ category.id }}">{{ category.name }}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+            <div class="form-group">
+                <label for="stock">Stock</label>
+                <input type="number" id="stock" name="stock" class="form-control" placeholder="0"
+                    required>
+            </div>
+            <div class="form-group">
+                <label for="price">Price</label>
+                <input type="number" step="0.01" id="price" name="price" class="form-control" placeholder="0.00"
+                    required>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="description">Description</label>
+            <textarea id="description" name="description" class="form-control"
+                placeholder="Describe your product in detail..."
+                required></textarea>
+        </div>
+        <div class="form-group">
+            <label for="image">Image</label>
+            <input type="file" id="image" name="image" class="form-control file-input" required>
+        </div>
+        <div class="form-actions">
+            <button class="btn" type="submit">Create product</button>
+            <a class="btn btn-secondary" href="{% url 'products:index' %}">Cancel</a>
+        </div>
+    </form>
+</section>
+{% endblock %}
