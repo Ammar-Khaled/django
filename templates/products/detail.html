@@ -12,6 +12,14 @@
         <h1>{{ product.name|title }}</h1>
         <p class="price">${{ product.price }}</p>
         <p><strong>Stock:</strong> {{ product.stock }}</p>
+        <p>
+            <strong>Category:</strong>
+            {% if product.category %}
+            <a href="{% url 'products:category_detail' product.category.id %}">{{ product.category.name }}</a>
+            {% else %}
+            Uncategorized
+            {% endif %}
+        </p>
         <p><strong>Description:</strong> {{ product.description }}</p>
         <p><strong>Created At:</strong> {{ product.created_at }}</p>
         <p><strong>Updated At:</strong> {{ product.updated_at }}</p>
