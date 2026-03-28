@@ -1,6 +1,7 @@
 from django.shortcuts import render, get_object_or_404, redirect
 
-from products.models import Product, Category
+from products.models import Product
+from categories.models import Category
 
 def index(request):
     products = Product.objects.all()
